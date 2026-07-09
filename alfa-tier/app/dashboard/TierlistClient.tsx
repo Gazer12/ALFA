@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { asignarTier, cerrarSesion } from "./actions";
+import { asignarTier, cerrarSesion, limpiarTierlist } from "./actions";
 
 const tiers = [
   { id: 5, nombre: "Le entrego mi sueldo", color: "#FFD700" },
@@ -49,6 +49,16 @@ export default function TierlistClient({
     await asignarTier(alfajorId, tierId, usuarioId);
   }
 
+  async function handleLimpiarTodo() {
+    const confirmar = confirm("¿Estás seguro de que querés reiniciar tu tierlist? Se borrarán todas tus selecciones actuales.");
+    if (!confirmar) return;
+
+    // Primero limpiamos visualmente el estado en React
+    setItems([]);
+    // Después lo borramos de Supabase mediante la Server Action
+    await limpiarTierlist(usuarioId);
+  }
+
   // --- Handlers de drag & drop ---
   function handleDragStart(alfajorId: number) {
     setArrastrando(alfajorId);
@@ -59,7 +69,7 @@ export default function TierlistClient({
   }
 
   function handleDragOver(e: React.DragEvent) {
-    e.preventDefault(); // obligatorio, sino el navegador no permite soltar
+    e.preventDefault();
   }
 
   function handleDrop(e: React.DragEvent, tierId: number) {
@@ -90,16 +100,27 @@ export default function TierlistClient({
             <h1 className="text-3xl font-bold mb-1">Mi Selección</h1>
             <p className="text-[#dbc2b0]">Arrastrá cada alfajor al tier que le corresponda.</p>
           </div>
-          <input
-            className="w-full md:w-80 bg-[#080808] border border-white/10 rounded-xl py-3 px-4 text-[#e5e2e1] placeholder:text-white/30"
-            placeholder="Buscar alfajor..."
-            type="text"
-            value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
-          />
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <input
+              className="w-full md:w-80 bg-[#080808] border border-white/10 rounded-xl py-3 px-4 text-[#e5e2e1] placeholder:text-white/30"
+              placeholder="Buscar alfajor..."
+              type="text"
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+            />
+            {/* NUEVO BOTÓN PARA REINICIAR LA TIERLIST */}
+            {items.length > 0 && (
+              <button
+                onClick={handleLimpiarTodo}
+                className="bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 font-semibold px-4 py-3 rounded-xl transition-colors text-sm shrink-0"
+              >
+                Limpiar Selección
+              </button>
+            )}
+          </div>
         </section>
 
-        {/* Contenedor en dos columnas para monitores/computadoras */}
+        {/* Contenedor en dos columnas */}
         <div className="flex flex-col md:flex-row gap-8 items-start">
           
           {/* COLUMNA IZQUIERDA: La Tierlist */}
@@ -154,7 +175,7 @@ export default function TierlistClient({
             })}
           </div>
 
-          {/* COLUMNA DERECHA: Alfajores sin clasificar (Sidebar pegajosa en PC con lista vertical) */}
+          {/* COLUMNA DERECHA: Alfajores sin clasificar */}
           <div className="w-full md:w-80 shrink-0 md:sticky md:top-28 bg-[#141414] border border-white/10 rounded-xl p-4">
             <h2 className="text-lg font-bold mb-3 flex items-center justify-between">
               <span>Sin clasificar</span>
@@ -163,7 +184,6 @@ export default function TierlistClient({
               </span>
             </h2>
             
-            {/* CORRECCIÓN ACÁ: Se cambió flex-row por flex-col de forma definitiva */}
             <div
               className="flex flex-col gap-2 min-h-[100px] max-h-[60vh] overflow-y-auto overflow-x-hidden p-2 rounded-lg border border-dashed border-white/10"
               onDragOver={handleDragOver}
