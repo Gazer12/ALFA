@@ -99,92 +99,118 @@ export default function TierlistClient({
           />
         </section>
 
-        {/* Tierlist */}
-        <div className="space-y-1 rounded-xl overflow-hidden border border-white/5 mb-12">
-          {tiers.map((tier) => {
-            const alfajoresDeEsteTier = alfajores.filter(
-              (a) => tierDeAlfajor(a.id) === tier.id && coincide(a)
-            );
-            return (
-              <div
-                key={tier.id}
-                className="flex"
-                style={{ minHeight: "120px", background: "#1A1A1A" }}
-                onDragOver={handleDragOver}
-                onDrop={(e) => handleDrop(e, tier.id)}
-              >
+        {/* Contenedor en dos columnas para monitores/computadoras */}
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+          
+          {/* COLUMNA IZQUIERDA: La Tierlist */}
+          <div className="flex-1 space-y-1 rounded-xl overflow-hidden border border-white/5 w-full">
+            {tiers.map((tier) => {
+              const alfajoresDeEsteTier = alfajores.filter(
+                (a) => tierDeAlfajor(a.id) === tier.id && coincide(a)
+              );
+              return (
                 <div
-                  className="w-24 flex items-center justify-center font-extrabold text-lg text-black text-center px-2 shrink-0"
-                  style={{ backgroundColor: tier.color }}
+                  key={tier.id}
+                  className="flex"
+                  style={{ minHeight: "120px", background: "#1A1A1A" }}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, tier.id)}
                 >
-                  {tier.nombre}
-                </div>
-                <div className="flex-1 p-4 flex items-center gap-4 overflow-x-auto flex-wrap">
-                  {alfajoresDeEsteTier.length === 0 && (
-                    <span className="italic text-[#dbc2b0]/40 text-sm">
-                      Soltá acá un alfajor.
-                    </span>
-                  )}
-                  {alfajoresDeEsteTier.map((alfajor) => (
-                    <div
-                      key={alfajor.id}
-                      draggable
-                      onDragStart={() => handleDragStart(alfajor.id)}
-                      onDragEnd={handleDragEnd}
-                      className={`flex flex-col items-center gap-1 w-16 shrink-0 cursor-grab active:cursor-grabbing ${
-                        arrastrando === alfajor.id ? "opacity-30" : ""
-                      }`}
-                    >
-                      <div className="w-16 h-16 rounded-full bg-[#201f1f] overflow-hidden border-2 border-white/10 pointer-events-none">
-                        {alfajor.imagen_url && (
-                          <img src={alfajor.imagen_url} alt={alfajor.nombre} className="w-full h-full object-cover" />
-                        )}
+                  <div
+                    className="w-24 flex items-center justify-center font-extrabold text-lg text-black text-center px-2 shrink-0"
+                    style={{ backgroundColor: tier.color }}
+                  >
+                    {tier.nombre}
+                  </div>
+                  <div className="flex-1 p-4 flex items-center gap-4 overflow-x-auto flex-wrap">
+                    {alfajoresDeEsteTier.length === 0 && (
+                      <span className="italic text-[#dbc2b0]/40 text-sm">
+                        Soltá acá un alfajor.
+                      </span>
+                    )}
+                    {alfajoresDeEsteTier.map((alfajor) => (
+                      <div
+                        key={alfajor.id}
+                        draggable
+                        onDragStart={() => handleDragStart(alfajor.id)}
+                        onDragEnd={handleDragEnd}
+                        className={`flex flex-col items-center gap-1 w-16 shrink-0 cursor-grab active:cursor-grabbing ${
+                          arrastrando === alfajor.id ? "opacity-30" : ""
+                        }`}
+                      >
+                        <div className="w-16 h-16 rounded-full bg-[#201f1f] overflow-hidden border-2 border-white/10 pointer-events-none">
+                          {alfajor.imagen_url && (
+                            <img src={alfajor.imagen_url} alt={alfajor.nombre} className="w-full h-full object-cover" />
+                          )}
+                        </div>
+                        <span className="text-[10px] text-center text-[#dbc2b0] pointer-events-none">
+                          {alfajor.nombre}
+                        </span>
                       </div>
-                      <span className="text-[10px] text-center text-[#dbc2b0] pointer-events-none">
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* COLUMNA DERECHA: Alfajores sin clasificar (Sidebar pegajosa en PC con lista vertical) */}
+          <div className="w-full md:w-80 shrink-0 md:sticky md:top-28 bg-[#141414] border border-white/10 rounded-xl p-4">
+            <h2 className="text-lg font-bold mb-3 flex items-center justify-between">
+              <span>Sin clasificar</span>
+              <span className="text-xs bg-white/10 px-2 py-0.5 rounded-full text-[#dbc2b0]">
+                {alfajores.filter((a) => tierDeAlfajor(a.id) === null && coincide(a)).length}
+              </span>
+            </h2>
+            
+            {/* CORRECCIÓN ACÁ: Se cambió flex-row por flex-col de forma definitiva */}
+            <div
+              className="flex flex-col gap-2 min-h-[100px] max-h-[60vh] overflow-y-auto overflow-x-hidden p-2 rounded-lg border border-dashed border-white/10"
+              onDragOver={handleDragOver}
+              onDrop={(e) => {
+                e.preventDefault();
+                if (arrastrando !== null) {
+                  setItems((prev) => prev.filter((i) => i.alfajor_id !== arrastrando));
+                  setArrastrando(null);
+                }
+              }}
+            >
+              {alfajores
+                .filter((a) => tierDeAlfajor(a.id) === null && coincide(a))
+                .map((alfajor) => (
+                  <div
+                    key={alfajor.id}
+                    draggable
+                    onDragStart={() => handleDragStart(alfajor.id)}
+                    onDragEnd={handleDragEnd}
+                    className={`flex items-center gap-3 w-full p-2 rounded-lg hover:bg-white/5 transition-colors cursor-grab active:cursor-grabbing ${
+                      arrastrando === alfajor.id ? "opacity-30" : ""
+                    }`}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-[#201f1f] overflow-hidden border-2 border-white/10 pointer-events-none shrink-0">
+                      {alfajor.imagen_url && (
+                        <img src={alfajor.imagen_url} alt={alfajor.nombre} className="w-full h-full object-cover" />
+                      )}
+                    </div>
+                    <div className="flex flex-col text-left pointer-events-none min-w-0">
+                      <span className="text-xs font-semibold text-[#e5e2e1] truncate">
                         {alfajor.nombre}
                       </span>
+                      <span className="text-[10px] text-[#dbc2b0]/60 truncate">
+                        {alfajor.marca}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                  </div>
+                ))}
 
-        {/* Alfajores sin clasificar */}
-        <h2 className="text-xl font-bold mb-4">Sin clasificar</h2>
-        <div
-          className="flex flex-wrap gap-4 min-h-[80px] p-2 rounded-xl border border-dashed border-white/10"
-          onDragOver={handleDragOver}
-          onDrop={(e) => {
-            e.preventDefault();
-            // Soltar acá "desclasifica": lo sacamos de items
-            if (arrastrando !== null) {
-              setItems((prev) => prev.filter((i) => i.alfajor_id !== arrastrando));
-              setArrastrando(null);
-            }
-          }}
-        >
-          {alfajores
-            .filter((a) => tierDeAlfajor(a.id) === null && coincide(a))
-            .map((alfajor) => (
-              <div
-                key={alfajor.id}
-                draggable
-                onDragStart={() => handleDragStart(alfajor.id)}
-                onDragEnd={handleDragEnd}
-                className={`flex flex-col items-center gap-2 w-20 cursor-grab active:cursor-grabbing ${
-                  arrastrando === alfajor.id ? "opacity-30" : ""
-                }`}
-              >
-                <div className="w-20 h-20 rounded-full bg-[#201f1f] overflow-hidden border-2 border-white/10 pointer-events-none">
-                  {alfajor.imagen_url && (
-                    <img src={alfajor.imagen_url} alt={alfajor.nombre} className="w-full h-full object-cover" />
-                  )}
-                </div>
-                <span className="text-xs text-center text-[#dbc2b0] pointer-events-none">{alfajor.nombre}</span>
-              </div>
-            ))}
+              {alfajores.filter((a) => tierDeAlfajor(a.id) === null && coincide(a)).length === 0 && (
+                <p className="text-xs italic text-[#dbc2b0]/40 text-center w-full py-4">
+                  ¡Clasificaste todos los alfajores! 🎉
+                </p>
+              )}
+            </div>
+          </div>
+
         </div>
       </main>
     </div>
