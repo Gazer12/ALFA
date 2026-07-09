@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alfa Tier - Iniciar Sesión</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Shared Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#ca8100",
+                    "secondary-fixed-dim": "#ffb68e",
+                    "surface-tint": "#ffb77d",
+                    "tertiary-fixed": "#ffddb8",
+                    "primary": "#ffb77d",
+                    "outline-variant": "#554336",
+                    "surface-bright": "#3a3939",
+                    "secondary-fixed": "#ffdbca",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed": "#331200",
+                    "on-primary-container": "#432100",
+                    "on-secondary-fixed-variant": "#763300",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#532200",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-background": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "background": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "surface": "#131313",
+                    "surface-dim": "#131313",
+                    "secondary": "#ffb68e",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdcc3",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#a38c7c",
+                    "error": "#ffb4ab",
+                    "primary-container": "#d97707",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "on-tertiary-container": "#3e2400",
+                    "on-surface-variant": "#dbc2b0",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed": "#2a1700",
+                    "tertiary": "#ffb95f",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#313030",
+                    "secondary-container": "#ab4c00",
+                    "on-primary": "#4d2600",
+                    "inverse-primary": "#904d00",
+                    "on-secondary-container": "#ffe2d5",
+                    "on-primary-fixed": "#2f1500",
+                    "tertiary-fixed-dim": "#ffb95f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "md": "24px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "margin-mobile": "16px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "margin-desktop": "120px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0F0F0F;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .form-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .amber-glow {
+            box-shadow: 0 0 40px -10px rgba(217, 119, 6, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop">
+<!-- Background Decorative Element -->
+<div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Main Container -->
+<main class="w-full max-w-md z-10">
+<!-- Header Section -->
+<header class="flex flex-col items-center mb-xl">
+<div class="w-16 h-16 mb-md flex items-center justify-center bg-surface-container rounded-full amber-glow border border-white/5">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">
+                    cookie
+                </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tighter">ALFA TIER</h1>
+<p class="font-body-md text-on-surface-variant mt-xs opacity-70">El archivo definitivo de alfajores.</p>
+</header>
+<!-- Form Card -->
+<div class="glass-card rounded-xl p-md md:p-lg w-full">
+<!-- Toggle Tabs -->
+<div class="flex p-1 bg-surface-container-lowest rounded-lg mb-lg border border-white/5">
+<button class="flex-1 py-xs font-label-md text-label-md rounded-md transition-all bg-primary text-on-primary" id="tab-login" onclick="switchForm('login')">
+                    Iniciar Sesión
+                </button>
+<button class="flex-1 py-xs font-label-md text-label-md rounded-md transition-all text-on-surface-variant hover:text-on-surface" id="tab-register" onclick="switchForm('register')">
+                    Registrarse
+                </button>
+</div>
+<!-- Forms Wrapper -->
+<div class="relative overflow-hidden">
+<!-- Login Form -->
+<form class="form-transition opacity-100 flex flex-col gap-sm" id="form-login">
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1">Usuario</label>
+<input class="bg-surface-container-lowest border-white/10 text-on-surface rounded-lg px-sm py-sm focus:ring-primary focus:border-primary placeholder:text-white/20 transition-all font-body-md" placeholder="nombredeusuario" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1">Contraseña</label>
+<input class="bg-surface-container-lowest border-white/10 text-on-surface rounded-lg px-sm py-sm focus:ring-primary focus:border-primary placeholder:text-white/20 transition-all font-body-md" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-sm rounded-lg mt-md hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                        Ingresar
+                    </button>
+</form>
+<!-- Register Form (Hidden by default) -->
+<form class="form-transition opacity-0 pointer-events-none hidden flex flex-col gap-sm" id="form-register">
+<div class="grid grid-cols-2 gap-sm">
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1">Nombre</label>
+<input class="bg-surface-container-lowest border-white/10 text-on-surface rounded-lg px-sm py-sm focus:ring-primary focus:border-primary placeholder:text-white/20 transition-all font-body-md" placeholder="Ej. Juan" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1">Apellido</label>
+<input class="bg-surface-container-lowest border-white/10 text-on-surface rounded-lg px-sm py-sm focus:ring-primary focus:border-primary placeholder:text-white/20 transition-all font-body-md" placeholder="Ej. Pérez" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1">Usuario</label>
+<input class="bg-surface-container-lowest border-white/10 text-on-surface rounded-lg px-sm py-sm focus:ring-primary focus:border-primary placeholder:text-white/20 transition-all font-body-md" placeholder="elegí_tu_alias" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1">Contraseña</label>
+<input class="bg-surface-container-lowest border-white/10 text-on-surface rounded-lg px-sm py-sm focus:ring-primary focus:border-primary placeholder:text-white/20 transition-all font-body-md" placeholder="Mínimo 8 caracteres" type="password"/>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-sm rounded-lg mt-md hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                        Crear cuenta
+                    </button>
+</form>
+</div>
+</div>
+<!-- Footer State Toggle -->
+<footer class="mt-lg text-center">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" id="footer-toggle" onclick="toggleMode()">
+                ¿No tienes una cuenta? <span class="font-bold border-b border-primary/30">Crea una ahora</span>
+</button>
+</footer>
+</main>
+<!-- UI Interaction Script -->
+<script>
+        function switchForm(mode) {
+            const loginForm = document.getElementById('form-login');
+            const registerForm = document.getElementById('form-register');
+            const loginTab = document.getElementById('tab-login');
+            const registerTab = document.getElementById('tab-register');
+            const footerToggle = document.getElementById('footer-toggle');
+
+            if (mode === 'login') {
+                loginForm.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                loginForm.classList.add('opacity-100');
+                registerForm.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                
+                loginTab.classList.add('bg-primary', 'text-on-primary');
+                loginTab.classList.remove('text-on-surface-variant');
+                registerTab.classList.remove('bg-primary', 'text-on-primary');
+                registerTab.classList.add('text-on-surface-variant');
+
+                footerToggle.innerHTML = '¿No tienes una cuenta? <span class="font-bold border-b border-primary/30">Crea una ahora</span>';
+            } else {
+                registerForm.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                registerForm.classList.add('opacity-100');
+                loginForm.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+
+                registerTab.classList.add('bg-primary', 'text-on-primary');
+                registerTab.classList.remove('text-on-surface-variant');
+                loginTab.classList.remove('bg-primary', 'text-on-primary');
+                loginTab.classList.add('text-on-surface-variant');
+
+                footerToggle.innerHTML = '¿Ya eres miembro? <span class="font-bold border-b border-primary/30">Inicia sesión</span>';
+            }
+        }
+
+        function toggleMode() {
+            const loginVisible = !document.getElementById('form-login').classList.contains('hidden');
+            switchForm(loginVisible ? 'register' : 'login');
+        }
+    </script>
+</body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALFA TIER - Ranking General</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#ca8100",
+                    "secondary-fixed-dim": "#ffb68e",
+                    "surface-tint": "#ffb77d",
+                    "tertiary-fixed": "#ffddb8",
+                    "primary": "#ffb77d",
+                    "outline-variant": "#554336",
+                    "surface-bright": "#3a3939",
+                    "secondary-fixed": "#ffdbca",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed": "#331200",
+                    "on-primary-container": "#432100",
+                    "on-secondary-fixed-variant": "#763300",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#532200",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-background": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "background": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "surface": "#131313",
+                    "surface-dim": "#131313",
+                    "secondary": "#ffb68e",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdcc3",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#a38c7c",
+                    "error": "#ffb4ab",
+                    "primary-container": "#d97707",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "on-tertiary-container": "#3e2400",
+                    "on-surface-variant": "#dbc2b0",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed": "#2a1700",
+                    "tertiary": "#ffb95f",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#313030",
+                    "secondary-container": "#ab4c00",
+                    "on-primary": "#4d2600",
+                    "inverse-primary": "#904d00",
+                    "on-secondary-container": "#ffe2d5",
+                    "on-primary-fixed": "#2f1500",
+                    "tertiary-fixed-dim": "#ffb95f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "md": "24px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "margin-mobile": "16px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "margin-desktop": "120px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0F0F0F;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .god-tier-glow {
+            box-shadow: 0 0 40px -10px rgba(217, 119, 6, 0.2);
+        }
+        .hairline-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="A professional studio headshot of a sophisticated food critic in a dark, moody setting. The lighting is dramatic, highlighting sharp features and a focused expression. The background is a deep charcoal grey with subtle amber highlights reflecting the premium gourmet aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBotdIXOjhysMx8pbomIpxrt5s9k-fNWAldAu_sF_Tb6FFt7Ovc6ig_gWUrWAJaqvxqXov_5q2FInZ7IeJFrNaPdagREt84T-yVaq2qyCSQmHxeIucovXV2HI77VePBEvMPgsM8nMfxGP8usHERyxWu_aQEyBC7vC55lSnnsZzOxpWmTo7FssEBdCh92WOTA6ciFVUz9J9vH2nfZESiq0zKCYEW1oTuock-M312KxhLbUos0n9s4Ee_oHOMKKGqXr0mkdplG6VlGek"/>
+</div>
+<h1 class="font-headline-xl text-headline-xl font-extrabold tracking-tighter text-primary">ALFA TIER</h1>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<nav class="flex gap-md">
+<a class="font-label-md text-label-md text-primary transition-colors flex flex-col items-center gap-1 group" href="#">
+<span>Ranking</span>
+<div class="w-1 h-1 rounded-full bg-primary"></div>
+</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">My List</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Explore</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Profile</a>
+</nav>
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-80 transition-opacity" data-icon="search">search</span>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+<!-- Header Section -->
+<div class="mb-lg">
+<div class="flex items-center gap-xs text-primary mb-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Hall of Fame</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-base">Ranking General</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">La autoridad máxima en el mundo del alfajor. Basado en puntajes de cata técnica y balance de texturas.</p>
+</div>
+<!-- Leaderboard List -->
+<div class="flex flex-col gap-sm">
+<!-- Rank #1 - Featured -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/30 god-tier-glow p-md flex flex-col md:flex-row items-center gap-md transition-all hover:scale-[1.01]">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 border border-primary/20 shrink-0">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="w-full md:w-48 h-48 md:h-32 rounded-lg overflow-hidden border border-white/5 shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A high-end, close-up commercial photograph of a Havanna 70% cacao alfajor, sliced in half to reveal thick, glossy layers of dark dulce de leche. The chocolate shell is matte and perfectly tempered. The lighting is warm and dramatic against a black slate background, emphasizing the rich textures and deep amber tones of the filling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsYFcAYdxemd4dt384bLe0XqChxW6FK0RJBwM5f6J3xx2215C8kILWD3u1e-0KDnrZxjLAhPjEqsaXXTYSgXlYyCzr95x6tObfzVqaZEo6rxekpDpvlPRko5RVSRhHjnOwHKWRy23tKvrDufSMlrDCKaz5iWfqH9LH-o4JVg1_rD1oYIwfHbZpM1qxmkrYdQ49eTmaIA5Q-jMxgd-mat8IJXNaMjXslRHky7uPN06l7k_ppIxSqwdOBKDWsk6tgrTuGNzUuz_Ca0k"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<div class="flex items-center gap-xs mb-1">
+<span class="text-primary font-bold">#1</span>
+<span class="text-on-surface-variant text-xs uppercase tracking-tighter">God Tier</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Havanna 70% Cacao</h3>
+<p class="text-on-surface-variant font-body-md">Havanna Argentina</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="text-primary font-headline-xl text-headline-xl">9.8</div>
+<div class="text-on-surface-variant text-label-sm uppercase tracking-widest">Puntaje Alfa</div>
+</div>
+</div>
+<!-- Rank #2 -->
+<div class="group bg-surface-container-lowest hairline-border p-sm rounded-xl flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-10 text-center font-bold text-on-surface-variant text-lg">#2</div>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-white/5 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A cinematic close-up of a premium artisanal alfajor with a thick coating of white chocolate. The cookie layers are golden brown and crumbly, sandwiching a generous amount of dark dulce de leche. Soft, warm lighting illuminates the scene, casting gentle shadows that emphasize the gourmet quality and craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUS6Er8Y9xMAN3g6AdrULFq6sA3dwJncgZXc8hWuj3Go66ZAvhlGC47NcOuxrZ_EMnDnVD-sMlvD3iw4y0nfCpTE9i7Q9XgbTprJhrH1cAz0LcyiF38mFlskdsf-Aswo0sOUT5NgsJNf3zGoLNwy73cIN8qKK-Y1GmHez2kUutCmM9mpECj_qxIeo6-WcGxGxjL4fUZe7WL2uVokjuEedcFupyBGkwbvY8olivOhifPQz31tN3E_pRI3T-WXG45vrG5IfuhyceA4"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Cachafari</h4>
+<p class="text-on-surface-variant text-sm">Cachafaz</p>
+</div>
+<div class="text-primary font-bold text-xl px-md">9.5</div>
+</div>
+<!-- Rank #3 -->
+<div class="group bg-surface-container-lowest hairline-border p-sm rounded-xl flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-10 text-center font-bold text-on-surface-variant text-lg">#3</div>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-white/5 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Close-up shot of a classic Santafesino style alfajor, featuring multiple thin layers of crispy dough held together by creamy dulce de leche and covered in a crisp, white sugar glaze. The lighting is sophisticated, with a warm glow highlighting the artisanal texture of the icing against a dark, minimalist surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhU6TSuzHdAFceCuayBW4q3-8CPzBvwdkgCsZfNoVSyeO8_JGcASYYWrMyBuEPlVIHxYBgKOK9lyUBXJeJwAb5LxBq2luylKQKubtwAZtLY7vD6yIgMAd2K5R2juMo7zujUtBPHwRjdIgzFeSWzvbjr9fQtm0FRmGau_4xj3T3jDQbKLP7bX68-Q64VnLLhXF9uPqIT2Rv9xm8q6sVBpnAEZGoTxw7_xDfM1tIRFJDepqPB4daqwFKVA3dfB7egKgPTuudGqiZ6Oc"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Guaymallén de Oro</h4>
+<p class="text-on-surface-variant text-sm">Guaymallén</p>
+</div>
+<div class="text-primary font-bold text-xl px-md">9.2</div>
+</div>
+<!-- Rank #4 -->
+<div class="group bg-surface-container-lowest hairline-border p-sm rounded-xl flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-10 text-center font-bold text-on-surface-variant text-lg">#4</div>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-white/5 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A minimalist presentation of a dark chocolate alfajor from a boutique patisserie. The image focuses on the perfect circular shape and the subtle texture of the chocolate shavings on top. Moody, dark gourmet lighting creates a sense of luxury and exclusivity, with deep amber tones reflecting off a polished dark surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU_fPOl2vGlRbmF-AVbrMy81jvmv5y2_slmknrYcnI_9znrdNMFAPk7qOy-xZ0nPaPLZYP0fUrKciJow7rOjIj1s1AvEr7HWfidPmnZQOaxQs3OuzYfFBivX4HxOmEgC8p0J_UmkvAb2nWoBMV6qX2hKHGqNpGlUG8yA5xzNdM6omkZJqdsgUGWFTx6ZDi4NrQEu8LjoOfgf1XbHHBartGQM5i4TcF3jgn_7jek2bzRd5ycoCfRtUuAsLRhrKVBybb0tUO1uyX1Tk"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Entre Dos</h4>
+<p class="text-on-surface-variant text-sm">Entre Dos Mendoza</p>
+</div>
+<div class="text-primary font-bold text-xl px-md">8.9</div>
+</div>
+<!-- Rank #5 -->
+<div class="group bg-surface-container-lowest hairline-border p-sm rounded-xl flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-10 text-center font-bold text-on-surface-variant text-lg">#5</div>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-white/5 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Close-up photograph of a traditional Argentine alfajor filled with Maicena (cornstarch) and rolled in shredded coconut. The textures are sharp and clear, showing the powdery cookie and the white coconut flakes. The atmosphere is warm and inviting, using a dark mode aesthetic with focused amber lighting to elevate the simple snack to a gourmet level." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnhFo4B4DlMiiVenXI27f9nQc0V1u0kXi7OcdWBxbS8002QnP6bdPYjp-VVxeJjX-8p22-8mCFRWVf6FnewDWTutVR81xsthyUkPo5uQZAH_CAjNSb2e0zcxSTuA2gbJysT10wPqMlN0hc0l-5QIjEMq8j5Zexwfh-07yfjG1o2RV7EnNKBz_TTuXV67DsYCO_KhkaS7mI-QsoC6OtFcD_mYlIqn0_wLsN2msZb885Yp19oEdrIqtBVZeBPN6LkalN-Vz05q10Eh4"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Jorgito Negro</h4>
+<p class="text-on-surface-variant text-sm">Jorgito</p>
+</div>
+<div class="text-primary font-bold text-xl px-md">8.7</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-xs px-sm md:hidden bg-surface-container-lowest border-t border-white/10 z-50">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-sm text-label-sm">Ranking</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="Format_list_bulleted">format_list_bulleted</span>
+<span class="font-label-sm text-label-sm">My List</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for hover states on list items
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                // Potential for adding subtle sound or haptic feedback calls
+            });
+        });
+    </script>
+</body></html>
