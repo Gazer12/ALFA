@@ -30,7 +30,7 @@ export default function LoginPage() {
             <span className="text-[#ffb77d] text-4xl">🍪</span>
           </div>
           <h1 className="text-4xl font-extrabold text-[#ffb77d] tracking-tighter">ALFA TIER</h1>
-          <p className="text-[#dbc2b0] mt-2 opacity-70">El archivo definitivo de alfajores.</p>
+          <p className="text-[#dbc2b0] mt-2 opacity-70">LA SANTA TRINIDAD DE LOS ALFAJORESSS.</p>
         </header>
 
         <div className="bg-[#1a1a1a]/60 backdrop-blur-md border border-white/5 rounded-xl p-6 w-full">
