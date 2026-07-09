@@ -1,5 +1,8 @@
 import { supabase } from "@/lib/supabase";
 
+// Forzamos a Next.js a que busque siempre datos frescos de Supabase en cada visita
+export const dynamic = "force-dynamic";
+
 export default async function RankingPage() {
   const { data: ranking } = await supabase
     .from("ranking_alfajores")
